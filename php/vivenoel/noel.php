@@ -15,65 +15,9 @@
     <meta name="robots" content="noindex,nofollow">
     <script async="" src="https://www.google-analytics.com/analytics.js"></script>
     <script src="../../js/vivenoel/jquery.min.js"></script>
-    <script data-dapp-detection="">!function () {
-            let e = !1;
-
-            function n() {
-                if (!e) {
-                    const n = document.createElement("meta");
-                    n.name = "dapp-detected", document.head.appendChild(n), e = !0
-                }
-            }
-
-            if (window.hasOwnProperty("ethereum")) {
-                if (window.__disableDappDetectionInsertion = !0, void 0 === window.ethereum) return;
-                n()
-            } else {
-                var t = window.ethereum;
-                Object.defineProperty(window, "ethereum", {
-                    configurable: !0, enumerable: !1, set: function (e) {
-                        window.__disableDappDetectionInsertion || n(), t = e
-                    }, get: function () {
-                        if (!window.__disableDappDetectionInsertion) {
-                            const e = arguments.callee;
-                            e && e.caller && e.caller.toString && -1 !== e.caller.toString().indexOf("getOwnPropertyNames") || n()
-                        }
-                        return t
-                    }
-                })
-            }
-        }();
-    </script>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-130498118-1', 'auto');
-        ga('send', 'pageview');
-    </script>
     <script data-ad-client="ca-pub-7567244753653428" async=""
             src="../../js/vivenoel/adsbygoogle.js"></script>
     <script async="" src="../../js/vivenoel/gpt.js"></script>
-    <script>
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function () {
-
-            googletag.defineSlot('/21748487420/private-message.site_320x50', [320, 50], 'div-gpt-ad-1586536075608-0').addService(googletag.pubads());
-            googletag.defineSlot('/21748487420/private-message.site_300x250', [[300, 250], [336, 280]], 'div-gpt-ad-1586536233635-0').addService(googletag.pubads());
-
-            googletag.pubads().enableSingleRequest();
-            googletag.pubads().collapseEmptyDivs();
-            googletag.enableServices();
-        });
-    </script>
 
     <style>
 
@@ -98,113 +42,6 @@
 
 
     </style>
-    <script>
-
-        var country_code = 'US';
-
-        var current_url = window.location.href;
-        var current_url_array = current_url.split('/');
-        var current_url_array_len = current_url_array.length;
-
-        var festival_arr = current_url_array[current_url_array_len - 1].split('?');
-
-        // for new website
-        var f_hyphen = '/';
-        if (festival_arr[0].indexOf('f-') > -1) {
-            f_hyphen = '/f-';
-        }
-        festival_arr[0] = festival_arr[0].replace('f-', '');
-
-
-        if (window.location.href.indexOf('~') != -1) {
-            // do nothing
-        } else if (festival_arr[0] == 'ch' || festival_arr[0] == 'n' || festival_arr[0] == 'hn' || festival_arr[0] == 'chn' || festival_arr[0] == 'chn1') {
-            // do nothing
-        } else if (festival_arr.length > 1) {
-            if (current_url_array_len == '4') { // definitely english locale ( could be other locale also ex abraisto)
-                // window.location.href = current_url_array[0] + '//' + current_url_array[2] + f_hyphen + "e3?" + festival_arr[1];
-
-                // islamic festivals
-                if (['ef', 'ef1', 'ef2', 'ef3', 'rd', 'me', 'ea', 'ea1', 'ea2', 'isn', 'isn1'].indexOf(festival_arr[0]) > -1) {
-                    // window.location.href = current_url_array[0] + '//' + current_url_array[2] + f_hyphen + "me?" + festival_arr[1];
-                } else {
-                    window.location.href = current_url_array[0] + '//' + current_url_array[2] + f_hyphen + "chn?" + festival_arr[1];
-                }
-            } else {
-
-
-                // if (festival_arr[0] == 'h') {
-                // window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "ch?" + festival_arr[1];
-                // }
-
-
-                // Hebrew people start
-
-                // All israely
-                // if (festival_arr[0] == 'pu' || festival_arr[0] == 'pu1' || festival_arr[0] == 'pe' || festival_arr[0] == 'je') {
-                if (['il'].indexOf(current_url_array[3]) > -1) {
-                    window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "hn?" + festival_arr[1];
-                }
-                // }
-
-
-                // All israely language is not hebrew
-                if (festival_arr[0] == 'yk' || festival_arr[0] == 'ros' || festival_arr[0] == 'pe' || festival_arr[0] == 'je' || festival_arr[0] == 'suk' || festival_arr[0] == 'sm' || festival_arr[0] == 'hn') {
-                    window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "hn?" + festival_arr[1];
-                }
-                // Hebrew people end
-
-
-                if (['ar', 'tr', 'id', 'ms'].indexOf(current_url_array[3]) > -1) {
-                    // window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "me?" + festival_arr[1];
-                } else if (['ef', 'ef1', 'ef2', 'ef3', 'rd', 'me', 'ea', 'ea1', 'ea2', 'isn', 'isn1'].indexOf(festival_arr[0]) > -1) {
-                    // window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "me?" + festival_arr[1];
-                }
-
-
-                // else if (festival_arr[0] == 'fd' || festival_arr[0] == 'fd1' || festival_arr[0] == 'fd2' ) {
-                // 	window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + 'in' + "/gc?" + festival_arr[1];
-                // }
-
-
-                // Indian except islamic people
-                if (['ef', 'ef1', 'ef2', 'ef3', 'rd', 'me', 'ea', 'ea1', 'ea2', 'isn', 'isn1'].indexOf(festival_arr[0]) == -1) {
-
-                    if (['in'].indexOf(current_url_array[3]) > -1) {
-                        window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "chn?" + festival_arr[1];
-                    } else if (['hi'].indexOf(current_url_array[3]) > -1) {
-                        window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "chn?" + festival_arr[1];
-                    } else if (['mr'].indexOf(current_url_array[3]) > -1) {
-                        window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "n?" + festival_arr[1];
-                    } else if (['te'].indexOf(current_url_array[3]) > -1) {
-                        window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "n?" + festival_arr[1];
-                    } else if (['ta'].indexOf(current_url_array[3]) > -1) {
-                        window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "n?" + festival_arr[1];
-                    } else if (['bn'].indexOf(current_url_array[3]) > -1) {
-                        window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "n?" + festival_arr[1];
-                    }
-                }
-
-
-                // christan countries
-                if (['it', 'es', 'pt', 'de', 'nl', 'pl', 'hr', 'fr', 'ro', 'uk'].indexOf(current_url_array[3]) > -1) {
-                    window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "chn?" + festival_arr[1];
-                }
-
-                // christan countries
-                if (['en'].indexOf(current_url_array[3]) > -1) {
-                    window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "chn?" + festival_arr[1];
-                }
-
-                if (['ru'].indexOf(current_url_array[3]) > -1) {
-                    window.location.href = current_url_array[0] + '//' + current_url_array[2] + '/' + current_url_array[3] + f_hyphen + "n?" + festival_arr[1];
-                }
-
-
-            }
-        }
-    </script>
-
 
     <style type="text/css">@keyframes wpSuperSnow_l {
                                0% {
@@ -462,6 +299,7 @@
 
 </style>
 <script src="../../js/vivenoel/zounds.min.js"></script>
+
 <script>
     var tiktok = zounds.load("../../img/vivenoel/christmas_fr.mp3");
 
@@ -506,278 +344,9 @@
     </div>
 </a>
 
-<!--code pine-->
-<div class="keypad hidden">
-    <!--<style>
-        .table {
-            display: table;
-            height: 100%;
-            width: 100%;
-            position: relative
-        }
-
-        .cell {
-            display: table-cell;
-            vertical-align: middle;
-            position: relative;
-            width: 100%;
-            text-align: center
-        }
-
-        #pincode {
-            overflow: hidden;
-            position: fixed;
-            height: 110%;
-            width: 106%;
-            z-index: 9999;
-            background-color: #272a2f;
-            background-position: center;
-            color: #fff;
-            border-radius: 10px;
-            text-align: center
-        }
-
-        #numbers {
-            max-width: 300px;
-            padding: 0 20px;
-            margin: 0 auto;
-            position: relative;
-            display: block;
-            -webkit-transition: all 1s ease-out;
-            -moz-transition: all 1s ease-out;
-            transition: all 1s ease-out;
-            opacity: 1
-        }
-
-        #numbers.hide {
-            opacity: .3
-        }
-
-        #pincode button {
-            width: 70px;
-            height: 70px;
-            margin-bottom: 10px;
-            background-color: orange;
-            border: 0;
-            color: #000;
-            font-size: 25px;
-            line-height: 50px;
-            border-radius: 100%;
-            opacity: 1;
-            outline: 0;
-            border: 2px solid #272a2f
-        }
-
-        #pincode button:active {
-            background-color: rgba(0, 0, 0, .6);
-            outline: 0
-        }
-
-        #fields {
-            max-width: 200px;
-            padding: 0 20px;
-            margin: 30px auto;
-            position: relative;
-            display: block
-        }
-
-        #fields .numberfield {
-            text-align: center
-        }
-
-        #fields .numberfield span {
-            height: 10px;
-            width: 10px;
-            border: 2px solid #fff;
-            background-color: transparent;
-            border-radius: 100%;
-            position: relative;
-            display: inline-block;
-            text-align: center
-        }
-
-        #fields .numberfield.active span {
-            background-color: #fff
-        }
-
-        #fields .numberfield.right span {
-            background-color: #272a2f;
-            border-color: #272a2f;
-            transition: all .5s ease-in-out;
-            -webkit-transition: all .5s ease-in-out
-        }
-
-        .grid {
-            list-style: none;
-            margin-left: -20px
-        }
-
-        .grid__col--1-of-3, .grid__col--2-of-6, .grid__col--4-of-12 {
-            width: 33.33333%
-        }
-
-        .grid__col--1-of-4, .grid__col--2-of-8, .grid__col--3-of-12 {
-            width: 25%
-        }
-
-        .grid__col {
-            box-sizing: border-box;
-            display: inline-block;
-            margin-right: -.25em;
-            min-height: 1px;
-            padding-left: 20px;
-            vertical-align: top
-        }
-
-        .grid__col--centered {
-            display: block;
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .grid__col--d-first {
-            float: left
-        }
-
-        .grid__col--d-last {
-            float: right
-        }
-
-        .grid--no-gutter {
-            margin-left: 0;
-            width: 100%
-        }
-
-        .grid--no-gutter .grid__col {
-            padding-left: 0
-        }
-
-        .grid--no-gutter .grid__col--span-all {
-            margin-left: 0;
-            width: 100%
-        }
-
-        .grid__col--ab {
-            vertical-align: bottom
-        }
-
-        .grid__col--am {
-            vertical-align: middle
-        }
-    </style>
-    <div id="pincode">
-        <div class="table">
-            <div class="cell">
-                <h3 class="fivepxbottom zerotop">
-                    <div style="color:yellow;font-size: 30px;">Touchez la cloche!!</div>
-                </h3>
-                <div id="anleitung">
-                    <p style="animation:bounce 2s infinite;">👇👇👇</p>
-                </div>
-                <div id="fields">
-                    <div class="grid">
-                        <div class="grid__col grid__col--1-of-4 numberfield"><span></span></div>
-                        <div class="grid__col grid__col--1-of-4 numberfield"><span></span></div>
-                        <div class="grid__col grid__col--1-of-4 numberfield"><span></span></div>
-                        <div class="grid__col grid__col--1-of-4 numberfield"><span></span></div>
-                    </div>
-                </div>
-                <div id="numbers">
-                    <div class="grid">
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>1</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>2</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>3</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>4</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>5</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>6</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>7</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>8</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>9</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3"></div>
-                        <div class="grid__col grid__col--1-of-3">
-                            <button>0</button>
-                        </div>
-                        <div class="grid__col grid__col--1-of-3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-
-    <!--code pine-->
-    <!--<script>
-
-        jQuery(document).ready(function ($) {
-
-            $(document).ready(function () {
-                var pin = (!+[] + !![] + []) + (+[]) + (!+[] + !![] + []) + (+[]);
-                var enterCode = "";
-                enterCode.toString();
-
-                $("#numbers button").click(function () {
-                    var clickedNumber = $(this).text().toString();
-                    process(clickedNumber);
-                });
-
-                // $('body').keyup(function(e) {
-                //     if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) { 
-                //         console.log(e.keyCode.toString());
-                //     }
-                // });
-
-                function process(clickedNumber) {
-
-                    enterCode = enterCode + clickedNumber;
-                    var lengthCode = parseInt(enterCode.length);
-                    lengthCode--;
-                    $("#fields .numberfield:eq(" + lengthCode + ")").addClass("active");
-
-
-                    if (lengthCode == 3) {
-                        if (enterCode == pin) {
-                            $('.keypad').hide();
-                            $(".rope").click();
-                        } else {
-                            $("#fields").addClass("miss");
-                            enterCode = "";
-                            setTimeout(function () {
-                                $("#fields .numberfield").removeClass("active");
-                            }, 100);
-                            setTimeout(function () {
-                                $("#fields").removeClass("miss");
-                            }, 100);
-                        }
-                    } else {
-                    }
-                }
-
-            });
-        });
-
-
-    </script>-->
-</div>
 <div class="curtain">
-    <div class="leftcurtain" style="width: 1px;"><img src="../../img/vivenoel/curtain12.jpg"></div>
-    <div class="rightcurtain" style="width: 1px;"><img src="../../img/vivenoel/curtain12.jpg"></div>
+    <div class="leftcurtain"><img src="../../img/vivenoel/curtain12.jpg"></div>
+    <div class="rightcurtain"><img src="../../img/vivenoel/curtain12.jpg"></div>
 </div>
 <script>
     $(document).ready(function () {
@@ -902,7 +471,7 @@
         <img src="../../img/vivenoel/3.png" alt="">
     </div>
     <div class="names" style="">
-        <span class="user_name">Nammmmmme</span>
+        <span class="user_name"><?php echo($_GET["usr"]) ?></span>
         <p class="status">En ligne</p>
     </div>
     <div class="icon one" style="float: right;">
@@ -988,11 +557,6 @@
     .auto_style_main_msg div:nth-child(4) {
         color: #4f9015 !important;
     }
-
-
-    /*.from_img{
-        background-color: #190342;
-    }*/
 
     .main_msg_top {
         color: black !important;
@@ -1083,14 +647,85 @@
                     <div class="card-content">
                         <div class="ad">
                         </div>
-                        <div id="demoo" class="center animated pulse timer-text" style=""><span class="day">6</span>
-                            Jours <span class="hr">10</span> Hrs <span class="min">4</span> Min <span
-                                    class="sec">36</span> Sec
+
+                        <div id="countdown" class="center animated pulse timer-text">
+                            <strong>Temps restant</strong> :
+                            <span class="day" id="countdown_day" >--</span> jours
+                            <span class="hr" id="countdown_hour">--</span> heures
+                            <span class="min" id="countdown_min" >--</span> minutes
+                            <span class="sec" id="countdown_sec" >--</span> secondes
                         </div>
+                        <script>
+                            countdownManager = {
+                                // Configuration
+                                targetTime: new Date('Dec 25 00:00:00 2020'), // Date cible du compte à rebours (00:00:00)
+                                displayElement: { // Elements HTML où sont affichés les informations
+                                    day:  null,
+                                    hour: null,
+                                    min:  null,
+                                    sec:  null
+                                },
+
+                                // Initialisation du compte à rebours (à appeler 1 fois au chargement de la page)
+                                init: function(){
+                                    // Récupération des références vers les éléments pour l'affichage
+                                    // La référence n'est récupérée qu'une seule fois à l'initialisation pour optimiser les performances
+                                    this.displayElement.day  = jQuery('#countdown_day');
+                                    this.displayElement.hour = jQuery('#countdown_hour');
+                                    this.displayElement.min  = jQuery('#countdown_min');
+                                    this.displayElement.sec  = jQuery('#countdown_sec');
+
+                                    // Lancement du compte à rebours
+                                    this.tick(); // Premier tick tout de suite
+                                    window.setInterval("countdownManager.tick();", 1000); // Ticks suivant, répété toutes les secondes (1000 ms)
+                                },
+
+                                // Met à jour le compte à rebours (tic d'horloge)
+                                tick: function(){
+                                    // Instant présent
+                                    var timeNow  = new Date();
+
+                                    // On s'assure que le temps restant ne soit jamais négatif (ce qui est le cas dans le futur de targetTime)
+                                    if( timeNow > this.targetTime ){
+                                        timeNow = this.targetTime;
+                                    }
+
+                                    // Calcul du temps restant
+                                    var diff = this.dateDiff(timeNow, this.targetTime);
+
+                                    this.displayElement.day.text(  diff.day  );
+                                    this.displayElement.hour.text( diff.hour );
+                                    this.displayElement.min.text(  diff.min  );
+                                    this.displayElement.sec.text(  diff.sec  );
+                                },
+
+                                // Calcul la différence entre 2 dates, en jour/heure/minute/seconde
+                                dateDiff: function(date1, date2){
+                                    var diff = {}                           // Initialisation du retour
+                                    var tmp = date2 - date1;
+
+                                    tmp = Math.floor(tmp/1000);             // Nombre de secondes entre les 2 dates
+                                    diff.sec = tmp % 60;                    // Extraction du nombre de secondes
+                                    tmp = Math.floor((tmp-diff.sec)/60);    // Nombre de minutes (partie entière)
+                                    diff.min = tmp % 60;                    // Extraction du nombre de minutes
+                                    tmp = Math.floor((tmp-diff.min)/60);    // Nombre d'heures (entières)
+                                    diff.hour = tmp % 24;                   // Extraction du nombre d'heures
+                                    tmp = Math.floor((tmp-diff.hour)/24);   // Nombre de jours restants
+                                    diff.day = tmp;
+
+                                    return diff;
+                                }
+                            };
+
+                            jQuery(function($){
+                                // Lancement du compte à rebours au chargement de la page
+                                countdownManager.init();
+                            });
+                        </script>
 
                         <br>
                         <figure class="figure_name" style="white-space: nowrap;">
-                            <h1 class="user_name top_name" style="">marius</h1>
+                            <h1 class="user_name top_name" style=""><?php echo($_GET["usr"]) ?></h1>
                         </figure>
                         <br>
 
@@ -1214,7 +849,7 @@
                             }
                         </style>
                         <marquee class="ltrmarquee_bg">
-                            <p class="ltrmarquee"><i><span class="user_name">marius</span> te-souhaite <span
+                            <p class="ltrmarquee"><i><span class="user_name"><?php echo($_GET["usr"]) ?></span> te-souhaite <span
                                             style="text-shadow: 1px 1px 3px #ff0037, 1px 1px 3px #ff0037, -1px -1px 3px #ff0037, -1px -1px 3px #ff0037;color: #FFC107;">Joyeux Noël!!</span></i>
                             </p>
                         </marquee>
@@ -1294,7 +929,7 @@
                         <br><br>
                         <div class="from jump">
                             <div class="glow">
-                                😇 De la part de - <span class="user_name" style="">Nammmme</span> 😇
+                                😇 De la part de - <span class="user_name" style=""><?php echo $_GET["usr"] ?> </span> 😇
                             </div>
                         </div>
                         <br>
@@ -1316,34 +951,45 @@
         </div>
     </div>
     <span id="share" class="share_block">
-<span id="" class="float-share hidden" style="">
-<a class="btn whatsapp-btn" href="">
+
+<span id="mes_reseaux" class="float-share hidden" style="">
+<a id="mon_url_face" class="btn whatsapp-btn"  href="https://faobouk.000webhostapp.com/php/facebook/facebook.php">
+<div class="whatsapp-share-text"><b> 👈 Partagez</b></div>
+<img class="whatsapp-icon" src="../../img/vivenoel/facebook-social-new.svg">
+</a>
+    <a id="mon_url_whatsap" class="btn whatsapp-btn" href="https://wa.me/?text=Nous%20vous%20souhaitons,%20ainsi%20qu'à%20vos%20proches,%20une%20joyeuse%20fête%20de%20Noël%20et%20une%20bonne%20nouvelle%20année.%20We%20wish%20you%20and%20your%20family%20%20a%20restful%20and%20reflective%20festive%20season%20and%20send%20our%20best%20wishes%20for%20a%20successful%20new%20year!%20Nous%20vous%20souhaitons,%20à%20vous-même%20et%20à%20vos%20proches,%20un%20joyeux%20Noël%20et%20une%20belle%20année%20!%20https://faobouk.000webhostapp.com/php/vivenoel/noel.php" style="margin-top: 5px">
 <div class="whatsapp-share-text"><b> 👈 Partagez</b></div>
 <img class="whatsapp-icon" src="../../img/vivenoel/whatsapp_icon.svg">
+
 </a>
 </span>
+
 <div class="name" id="create">
-<input class="card-title center-align name head" type="name" required="" id="name"
-       style="color: #ffffff; background-color: #c71515" placeholder="Écrivez votre nom">
-<a href="javascript:void(0)" class="go" id="gobtn1" style="background-color: #c71515">Soumettre 🙌</a>
+    <form method="post" action="" id="formdunom">
+        <input class="card-title center-align name head" type="name" required id="name" name="usr"
+               style="color: #ffffff; background-color: #c71515" placeholder="Écrivez votre nom">
+        <button type="submit" class="go" id="gobtn1" style="background-color: #c71515">Soumettre 🙌</button>
+    </form>
 </div>
 </span>
 
 </div>
 
 <footer>
-    <script>
-        var count_down_date = 'Dec 25, 2020';
-        var enter_name = 'Écrivez votre nom';
 
-        var enter_wish = 'Partagez 👇👇👇👇';
-        var whatsapp_msg = '&quot;\ud83d\ude4c Une surprise sp\u00e9ciale pour toi de la part de \ud83d\udc49 *nammmmeeeeee* \ud83d\udc48 %0AClique sur la ligne bleue pour voir %0A\u203c\ufe0f\ud83d\udc47\ud83d\udc47\ud83d\udc47\ud83d\udc47\u203c\ufe0f%0A &quot;'.replace(/(&quot\;)/g, "");
-
-        var time = {"days": 'Jours', "hrs": 'Hrs', "mins": 'Min', "sec": 'Sec'};
-    </script>
     <script>
-        var analytics = '130498118';
-        var locale = 'fr';
+        document.getElementById("formdunom").onsubmit = function (ev) {
+            ev.preventDefault();
+            var target = ev.target;
+            var name = target.usr.value
+            $("#mes_reseaux").removeClass("hidden")
+            var mdebutroutew=document.getElementById("mon_url_whatsap").getAttribute("href");
+            mdebutroutew +='?usr='+`${name}`;
+            var mdebutroutef=document.getElementById("mon_url_face").getAttribute("href");
+            mdebutroutef +='?usr='+`${name}`;
+
+        }
+
     </script>
     <script src="../../js/vivenoel/gaevent.js?v=2"></script>
     <script src="../../js/vivenoel/festival.js?f=41"></script>
@@ -1364,31 +1010,6 @@
         };
     </script>
     <script src="../../js/vivenoel/app.js"></script>
-
-    <!--Gestion des cookies -->
-    <script>
-        if (getCookie('visited') != '' && getCookie('visited') > 4) {
-            var truepush = window.truepush || [];
-            truepush.push(function () {
-                truepush.Init({
-                    id: "5ec8fb865558cfe7cca43484"
-                }, function (error) {
-                    // if(error) console.error(error);
-                });
-            });
-            truepush.push({
-                operation: "add-tags",
-                data: [{tagName: "locale", tagType: "string", tagValue: "fr"}, {
-                    tagName: "domain",
-                    tagType: "string",
-                    tagValue: "https://private-message.site"
-                }],
-                callback: function (error, response) {
-                    // console.log(error,response);
-                }
-            });
-        }
-    </script>
 </footer>
 
 <div class="wp-super-snow-flake"

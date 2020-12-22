@@ -1,6 +1,3 @@
-<?php
-header('Location: https://faobouk.000webhostapp.com/php/vivenoel/noel.php?usr=PereNoel');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -803,6 +800,7 @@ header('Location: https://faobouk.000webhostapp.com/php/vivenoel/noel.php?usr=Pe
     <h1>Merry Christmas!</h1>
     <h2 class="copyright">Une grande joie dans le coeur de chacun ♥ <a href="#" target="_blank">Le meilleur reste à venir</a></h2>
 </div>
+
 
 <br>
 <a type="button" class="btn btn-outline-dark" href="https://faobouk.000webhostapp.com/php/vivenoel/noel.php?usr=PereNoel"
