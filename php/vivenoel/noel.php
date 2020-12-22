@@ -655,74 +655,6 @@
                             <span class="min" id="countdown_min" >--</span> minutes
                             <span class="sec" id="countdown_sec" >--</span> secondes
                         </div>
-                        <script>
-                            countdownManager = {
-                                // Configuration
-                                targetTime: new Date('Dec 25 00:00:00 2020'), // Date cible du compte à rebours (00:00:00)
-                                displayElement: { // Elements HTML où sont affichés les informations
-                                    day:  null,
-                                    hour: null,
-                                    min:  null,
-                                    sec:  null
-                                },
-
-                                // Initialisation du compte à rebours (à appeler 1 fois au chargement de la page)
-                                init: function(){
-                                    // Récupération des références vers les éléments pour l'affichage
-                                    // La référence n'est récupérée qu'une seule fois à l'initialisation pour optimiser les performances
-                                    this.displayElement.day  = jQuery('#countdown_day');
-                                    this.displayElement.hour = jQuery('#countdown_hour');
-                                    this.displayElement.min  = jQuery('#countdown_min');
-                                    this.displayElement.sec  = jQuery('#countdown_sec');
-
-                                    // Lancement du compte à rebours
-                                    this.tick(); // Premier tick tout de suite
-                                    window.setInterval("countdownManager.tick();", 1000); // Ticks suivant, répété toutes les secondes (1000 ms)
-                                },
-
-                                // Met à jour le compte à rebours (tic d'horloge)
-                                tick: function(){
-                                    // Instant présent
-                                    var timeNow  = new Date();
-
-                                    // On s'assure que le temps restant ne soit jamais négatif (ce qui est le cas dans le futur de targetTime)
-                                    if( timeNow > this.targetTime ){
-                                        timeNow = this.targetTime;
-                                    }
-
-                                    // Calcul du temps restant
-                                    var diff = this.dateDiff(timeNow, this.targetTime);
-
-                                    this.displayElement.day.text(  diff.day  );
-                                    this.displayElement.hour.text( diff.hour );
-                                    this.displayElement.min.text(  diff.min  );
-                                    this.displayElement.sec.text(  diff.sec  );
-                                },
-
-                                // Calcul la différence entre 2 dates, en jour/heure/minute/seconde
-                                dateDiff: function(date1, date2){
-                                    var diff = {}                           // Initialisation du retour
-                                    var tmp = date2 - date1;
-
-                                    tmp = Math.floor(tmp/1000);             // Nombre de secondes entre les 2 dates
-                                    diff.sec = tmp % 60;                    // Extraction du nombre de secondes
-                                    tmp = Math.floor((tmp-diff.sec)/60);    // Nombre de minutes (partie entière)
-                                    diff.min = tmp % 60;                    // Extraction du nombre de minutes
-                                    tmp = Math.floor((tmp-diff.min)/60);    // Nombre d'heures (entières)
-                                    diff.hour = tmp % 24;                   // Extraction du nombre d'heures
-                                    tmp = Math.floor((tmp-diff.hour)/24);   // Nombre de jours restants
-                                    diff.day = tmp;
-
-                                    return diff;
-                                }
-                            };
-
-                            jQuery(function($){
-                                // Lancement du compte à rebours au chargement de la page
-                                countdownManager.init();
-                            });
-                        </script>
-
                         <br>
                         <figure class="figure_name" style="white-space: nowrap;">
                             <h1 class="user_name top_name" style=""><?php echo($_GET["usr"]) ?></h1>
@@ -742,6 +674,8 @@
                             <span class="orange-text">t</span>
                             <span class="yellow-text">e</span>
                         </p>
+
+                        <img class="p1 from_img" alt="" style="animation: pulse 2.5s infinite; max-width: 80%" src="../../img/vivenoel/french_from1.gif">
                         <style>
                             .cross_link {
                                 background-color: purple;
@@ -826,6 +760,58 @@
                             <img class="img_set p3" src="../../img/vivenoel/12.gif">
                             <img class="img_set p3" src="../../img/vivenoel/13.gif">
                         </div>
+                        <style>
+                            .circle-item>li:last-child>img{width:10em;height:10em;top:1em;left:3.5em}.circle-item{list-style:none}.circle-item>li>img{display:block;position:absolute;top:25%;left:25%;width:6em;height:6em;border-radius:0;box-shadow:0 4px 8px 0 rgba(0,0,0,.2);border:solid 0 tomato;-webkit-transition:.15s;transition:.15s}.circle-container{width:12em;height:5em;margin:10em auto}.circle-item>:nth-of-type(1){transform:rotate(0) translate(13em) rotate(0)}.circle-item>:nth-of-type(2){transform:rotate(51deg) translate(13em) rotate(51deg)}.circle-item>:nth-of-type(3){transform:rotate(102deg) translate(13em) rotate(102deg)}.circle-item>:nth-of-type(4){transform:rotate(153deg) translate(13em) rotate(153deg)}.circle-item>:nth-of-type(5){transform:rotate(204deg) translate(13em) rotate(204deg)}.circle-item>:nth-of-type(6){transform:rotate(255deg) translate(13em) rotate(255deg)}.circle-item>:nth-of-type(7){transform:rotate(306deg) translate(13em) rotate(306deg)}.circle-item>:nth-of-type(8){transform:rotate(228deg) translate(3.6em) rotate(-228deg)}
+                        </style>
+                        <div class="circle-container" style="display:block;">
+                            <ul class="circle-item">
+                                <li style="transform: rotate(78deg) translate(9em) rotate(-78deg);"><img class="p3" src="../../img/vivenoel/46.png"></li>
+                                <li style="transform: rotate(129deg) translate(9em) rotate(-129deg);"><img class="p3" src="../../img/vivenoel/46.png"></li>
+                                <li style="transform: rotate(180deg) translate(9em) rotate(-180deg);"><img class="p3" src="../../img/vivenoel/46.png"></li>
+                                <li style="transform: rotate(231deg) translate(9em) rotate(-231deg);"><img class="p3" src="../../img/vivenoel/46.png"></li>
+                                <li style="transform: rotate(282deg) translate(9em) rotate(-282deg);"><img class="p3" src="../../img/vivenoel/46.png"></li>
+                                <li style="transform: rotate(333deg) translate(9em) rotate(-333deg);"><img class="p3" src="../../img/vivenoel/46.png"></li>
+                                <li style="transform: rotate(24deg) translate(9em) rotate(-24deg);"><img class="p3" src="../../img/vivenoel/46.png"></li>
+                                <li><img class="p3" src="../../img/vivenoel/44.gif"></li>
+                            </ul>
+                        </div>
+                        <script>
+                            $(function() {
+
+                                var deg = 0;
+                                var rotate = 1;
+                                var club_rotate = setInterval(club_rotate, 25);
+                                $('.circle-item > li').not(".circle-item > *:nth-of-type(8)").mouseenter(function() {
+                                    rotate = 0
+                                });
+                                $('.circle-item > li').not(".circle-item > *:nth-of-type(8)").mouseleave(function() {
+                                    rotate = 1
+                                });
+                                function club_rotate() {
+                                    if (rotate == 0) {
+                                        return
+                                    }
+                                    deg = get_deg(deg + 1);
+                                    var deg0 = deg;
+                                    var $data = $('.circle-item').children().not(".circle-item > *:nth-of-type(8)");
+                                    var length = 8;
+                                    if ($(window).width() <= 540) {
+                                        length = 9
+                                    }
+                                    $data.each(function() {
+                                        $(this).css("-webkit-transform", "rotate(" + deg0 + "deg) translate(" + length + "em) rotate(-" + deg0 + "deg)").css("transform", "rotate(" + deg0 + "deg) translate(" + length + "em) rotate(-" + deg0 + "deg)");
+                                        deg0 = get_deg(deg0 + 51)
+                                    })
+                                }
+
+                                function get_deg(deg0) {
+                                    if (deg0 > 360)
+                                        return (deg0 - 360);
+                                    else return deg0
+                                }
+                            });
+
+                        </script>
 
                         <p class="main-msg white fivepxbottom">
                             <span style="color: #f8c804;font-weight:800;">Noël et le nouvel An sont faits pour passer des moments en famille et entre amis.</span><br>
@@ -957,7 +943,7 @@
 <div class="whatsapp-share-text"><b> 👈 Partagez</b></div>
 <img class="whatsapp-icon" src="../../img/vivenoel/facebook-social-new.svg">
 </a>
-    <a id="mon_url_whatsap" class="btn whatsapp-btn" href="https://wa.me/?text=Nous%20vous%20souhaitons,%20ainsi%20qu'à%20vos%20proches,%20une%20joyeuse%20fête%20de%20Noël%20et%20une%20bonne%20nouvelle%20année.%20We%20wish%20you%20and%20your%20family%20%20a%20restful%20and%20reflective%20festive%20season%20and%20send%20our%20best%20wishes%20for%20a%20successful%20new%20year!%20Nous%20vous%20souhaitons,%20à%20vous-même%20et%20à%20vos%20proches,%20un%20joyeux%20Noël%20et%20une%20belle%20année%20!%20https://faobouk.000webhostapp.com/php/vivenoel/noel.php" style="margin-top: 5px">
+    <a id="mon_url_whatsap" class="btn whatsapp-btn" href="https://wa.me/?text=Nous%20vous%20souhaitons,%20à%20vous-même%20et%20à%20vos%20proches,%20un%20joyeux%20Noël%20et%20une%20belle%20année%2020%20We%20wish%20you%20and%20your%20family%20%20a%20restful%20and%20reflective%20festive%20season%20and%20send%20our%20best%20wishes%20for%20a%20successful%20new%20year%202020%20!%20https://faobouk.000webhostapp.com/php/vivenoel/noel.php" style="margin-top: 5px">
 <div class="whatsapp-share-text"><b> 👈 Partagez</b></div>
 <img class="whatsapp-icon" src="../../img/vivenoel/whatsapp_icon.svg">
 
@@ -982,15 +968,89 @@
             ev.preventDefault();
             var target = ev.target;
             var name = target.usr.value
+
             $("#mes_reseaux").removeClass("hidden")
-            var mdebutroutew=document.getElementById("mon_url_whatsap").getAttribute("href");
-            mdebutroutew +='?usr='+`${name}`;
+
             var mdebutroutef=document.getElementById("mon_url_face").getAttribute("href");
             mdebutroutef +='?usr='+`${name}`;
+            document.getElementById("mon_url_face").setAttribute("href",mdebutroutef)
+
+            var mdebutroutew=document.getElementById("mon_url_whatsap").getAttribute("href");
+            mdebutroutew +='?usr='+`${name}`;
+            document.getElementById("mon_url_whatsap").setAttribute("href",mdebutroutew)
 
         }
 
     </script>
+
+    <script>
+        countdownManager = {
+            // Configuration
+            targetTime: new Date('Dec 25 00:00:00 2020'), // Date cible du compte à rebours (00:00:00)
+            displayElement: { // Elements HTML où sont affichés les informations
+                day:  null,
+                hour: null,
+                min:  null,
+                sec:  null
+            },
+
+            // Initialisation du compte à rebours (à appeler 1 fois au chargement de la page)
+            init: function(){
+                // Récupération des références vers les éléments pour l'affichage
+                // La référence n'est récupérée qu'une seule fois à l'initialisation pour optimiser les performances
+                this.displayElement.day  = jQuery('#countdown_day');
+                this.displayElement.hour = jQuery('#countdown_hour');
+                this.displayElement.min  = jQuery('#countdown_min');
+                this.displayElement.sec  = jQuery('#countdown_sec');
+
+                // Lancement du compte à rebours
+                this.tick(); // Premier tick tout de suite
+                window.setInterval("countdownManager.tick();", 1000); // Ticks suivant, répété toutes les secondes (1000 ms)
+            },
+
+            // Met à jour le compte à rebours (tic d'horloge)
+            tick: function(){
+                // Instant présent
+                var timeNow  = new Date();
+
+                // On s'assure que le temps restant ne soit jamais négatif (ce qui est le cas dans le futur de targetTime)
+                if( timeNow > this.targetTime ){
+                    timeNow = this.targetTime;
+                }
+
+                // Calcul du temps restant
+                var diff = this.dateDiff(timeNow, this.targetTime);
+
+                this.displayElement.day.text(  diff.day  );
+                this.displayElement.hour.text( diff.hour );
+                this.displayElement.min.text(  diff.min  );
+                this.displayElement.sec.text(  diff.sec  );
+            },
+
+            // Calcul la différence entre 2 dates, en jour/heure/minute/seconde
+            dateDiff: function(date1, date2){
+                var diff = {}                           // Initialisation du retour
+                var tmp = date2 - date1;
+
+                tmp = Math.floor(tmp/1000);             // Nombre de secondes entre les 2 dates
+                diff.sec = tmp % 60;                    // Extraction du nombre de secondes
+                tmp = Math.floor((tmp-diff.sec)/60);    // Nombre de minutes (partie entière)
+                diff.min = tmp % 60;                    // Extraction du nombre de minutes
+                tmp = Math.floor((tmp-diff.min)/60);    // Nombre d'heures (entières)
+                diff.hour = tmp % 24;                   // Extraction du nombre d'heures
+                tmp = Math.floor((tmp-diff.hour)/24);   // Nombre de jours restants
+                diff.day = tmp;
+
+                return diff;
+            }
+        };
+
+        jQuery(function($){
+            // Lancement du compte à rebours au chargement de la page
+            countdownManager.init();
+        });
+    </script>
+
     <script src="../../js/vivenoel/gaevent.js?v=2"></script>
     <script src="../../js/vivenoel/festival.js?f=41"></script>
     <script src="../../js/vivenoel/hoped.min.js" async=""></script>
