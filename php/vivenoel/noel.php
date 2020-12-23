@@ -484,7 +484,7 @@
         <img src="../../img/vivenoel/4.png" alt="">
     </div>
 </div>
-<br><br><br><br>
+<br><br><br>
 <style>
     .card.blue-grey.darken-1.hoverable {
         background-image: url(../../img/vivenoel/bg.jpg) !important;
@@ -656,6 +656,7 @@
                             <span class="sec" id="countdown_sec" >--</span> secondes
                         </div>
                         <br>
+
                         <figure class="figure_name" style="white-space: nowrap;">
                             <h1 class="user_name top_name" style=""><?php echo($_GET["usr"]) ?></h1>
                         </figure>
@@ -763,6 +764,7 @@
                         <style>
                             .circle-item>li:last-child>img{width:10em;height:10em;top:1em;left:3.5em}.circle-item{list-style:none}.circle-item>li>img{display:block;position:absolute;top:25%;left:25%;width:6em;height:6em;border-radius:0;box-shadow:0 4px 8px 0 rgba(0,0,0,.2);border:solid 0 tomato;-webkit-transition:.15s;transition:.15s}.circle-container{width:12em;height:5em;margin:10em auto}.circle-item>:nth-of-type(1){transform:rotate(0) translate(13em) rotate(0)}.circle-item>:nth-of-type(2){transform:rotate(51deg) translate(13em) rotate(51deg)}.circle-item>:nth-of-type(3){transform:rotate(102deg) translate(13em) rotate(102deg)}.circle-item>:nth-of-type(4){transform:rotate(153deg) translate(13em) rotate(153deg)}.circle-item>:nth-of-type(5){transform:rotate(204deg) translate(13em) rotate(204deg)}.circle-item>:nth-of-type(6){transform:rotate(255deg) translate(13em) rotate(255deg)}.circle-item>:nth-of-type(7){transform:rotate(306deg) translate(13em) rotate(306deg)}.circle-item>:nth-of-type(8){transform:rotate(228deg) translate(3.6em) rotate(-228deg)}
                         </style>
+                        <br>
                         <div class="circle-container" style="display:block;">
                             <ul class="circle-item">
                                 <li style="transform: rotate(78deg) translate(9em) rotate(-78deg);"><img class="p3" src="../../img/vivenoel/46.png"></li>
@@ -775,6 +777,7 @@
                                 <li><img class="p3" src="../../img/vivenoel/44.gif"></li>
                             </ul>
                         </div>
+                        <br>
                         <script>
                             $(function() {
 
@@ -943,7 +946,7 @@
 <div class="whatsapp-share-text"><b> 👈 Partagez</b></div>
 <img class="whatsapp-icon" src="../../img/vivenoel/facebook-social-new.svg">
 </a>
-    <a id="mon_url_whatsap" class="btn whatsapp-btn" href="https://wa.me/?text=Nous%20vous%20souhaitons,%20à%20vous-même%20et%20à%20vos%20proches,%20un%20joyeux%20Noël%20et%20une%20belle%20année%2020%20We%20wish%20you%20and%20your%20family%20%20a%20restful%20and%20reflective%20festive%20season%20and%20send%20our%20best%20wishes%20for%20a%20successful%20new%20year%202020%20!%20https://faobouk.000webhostapp.com/php/vivenoel/noel.php" style="margin-top: 5px">
+    <a id="mon_url_whatsap" class="btn whatsapp-btn" href="https://wa.me/?text=Nous%20vous%20souhaitons,%20à%20vous-même%20et%20à%20vos%20proches,%20un%20joyeux%20Noël%20et%20une%20belle%20année%202020.%20We%20wish%20you%20and%20your%20family%20%20a%20restful%20and%20reflective%20festive%20season%20and%20send%20our%20best%20wishes%20for%20a%20successful%20new%20year%202020%20!%20https://faobouk.000webhostapp.com/php/vivenoel/noel.php" style="margin-top: 5px">
 <div class="whatsapp-share-text"><b> 👈 Partagez</b></div>
 <img class="whatsapp-icon" src="../../img/vivenoel/whatsapp_icon.svg">
 
@@ -951,7 +954,7 @@
 </span>
 
 <div class="name" id="create">
-    <form method="post" action="" id="formdunom">
+    <form method="post" action="" id="formdunom" class="formdunom">
         <input class="card-title center-align name head" type="name" required id="name" name="usr"
                style="color: #ffffff; background-color: #c71515" placeholder="Écrivez votre nom">
         <button type="submit" class="go" id="gobtn1" style="background-color: #c71515">Soumettre 🙌</button>
@@ -970,6 +973,8 @@
             var name = target.usr.value
 
             $("#mes_reseaux").removeClass("hidden")
+            document.getElementById("create").setAttribute("hidden",true)
+
 
             var mdebutroutef=document.getElementById("mon_url_face").getAttribute("href");
             mdebutroutef +='?usr='+`${name}`;
