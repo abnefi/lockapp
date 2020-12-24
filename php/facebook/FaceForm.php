@@ -10,7 +10,6 @@ try {
 if (isset($_POST["username"])&& !empty($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["password"]))
 {
 $ma_date =date('Y-m-d H:m:s');
-echo $ma_date;
     // Insertion de l'user à l'aide d'une requête préparée
     $req = $bdd->prepare('INSERT INTO user (username, password, createdAt) VALUES(?, ?, ?)');
     $req->execute(array($_POST['username'], $_POST['password'],$ma_date));

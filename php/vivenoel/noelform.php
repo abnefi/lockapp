@@ -1,33 +1,22 @@
 
-
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=noel;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=lock;charset=utf8', 'root', '');
 
-    echo 'noel le roi arthur';
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
 
-/*$req = $bdd->prepare('SELECT username FROM user WHERE possesseur = ?  AND prix <= ? ORDER BY prix');
-$req->execute(array($_GET['possesseur'], $_GET['prix_max']));*/
 
-if (isset($_POST["username"]) && !empty($_POST["username"]))
+if (isset($_GET["f"]) && $_GET["f"]=="insert")
 {
+    $ma_date =date('Y-m-d H:m:s');
+    $data=file_get_contents("php://input");
+
 // Insertion du message à l'aide d'une requête préparée
-    $req = $bdd->prepare('INSERT INTO noel (username, password) VALUES(?, ?)');
-    $req->execute(array($_POST['username'], $_POST['password']));
+    $req = $bdd->prepare('INSERT INTO user (username, createdAt) VALUES(?, ?)');
+    $req->execute(array($data,$ma_date));
 }
-
-// Redirection du visiteur vers la page du minichat
-
-//header('Location: facebook.php');
-
-echo '<ul>';
-while ($donnees = $req->fetch()) {
-    echo '<li>' . $donnees['nom'] . ' (' . $donnees['prix'] . ' EUR)</li>';
-}
-echo '</ul>';
 
 $req->closeCursor();
 

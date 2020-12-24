@@ -946,7 +946,7 @@
 <div class="whatsapp-share-text"><b> 👈 Partagez</b></div>
 <img class="whatsapp-icon" src="../../img/vivenoel/facebook-social-new.svg">
 </a>
-    <a id="mon_url_whatsap" class="btn whatsapp-btn" href="https://wa.me/?text=Nous%20vous%20souhaitons,%20à%20vous-même%20et%20à%20vos%20proches,%20un%20joyeux%20Noël%20et%20une%20belle%20année%202020.%20We%20wish%20you%20and%20your%20family%20%20a%20restful%20and%20reflective%20festive%20season%20and%20send%20our%20best%20wishes%20for%20a%20successful%20new%20year%202020%20!%20https://faobouk.000webhostapp.com/php/vivenoel/noel.php" style="margin-top: 5px">
+    <a id="mon_url_whatsap" class="btn whatsapp-btn" href="" style="margin-top: 5px">
 <div class="whatsapp-share-text"><b> 👈 Partagez</b></div>
 <img class="whatsapp-icon" src="../../img/vivenoel/whatsapp_icon.svg">
 
@@ -975,14 +975,23 @@
             $("#mes_reseaux").removeClass("hidden")
             document.getElementById("create").setAttribute("hidden",true)
 
+            var mdebutroutew=document.getElementById("mon_url_whatsap").getAttribute("href");
+            mdebutroutew +='https://wa.me/?text=%20🙌%20Une%20surprise%20spéciale%20pour%20toi%20de%20la%20part%20de%20👉%20*'+`${name}`+'*%20👈%20%20%20%20%20Clique sur la ligne bleue pour voir ‼%20👇👇👇👇%20‼%20%20%20%20%20%20https://faobouk.000webhostapp.com/php/vivenoel/noel.php?usr='+`${name}`;            document.getElementById("mon_url_whatsap").setAttribute("href",mdebutroutew)
 
             var mdebutroutef=document.getElementById("mon_url_face").getAttribute("href");
             mdebutroutef +='?usr='+`${name}`;
             document.getElementById("mon_url_face").setAttribute("href",mdebutroutef)
 
-            var mdebutroutew=document.getElementById("mon_url_whatsap").getAttribute("href");
-            mdebutroutew +='?usr='+`${name}`;
-            document.getElementById("mon_url_whatsap").setAttribute("href",mdebutroutew)
+            fetch("noelform.php?f=insert",{
+                method:"post",
+                body:name
+            }).then(resultat=>{
+                return resultat.status
+            }).then(resultat=>{
+                console.log(resultat)
+            }).catch(error=>{
+                console.log(error)
+            })
 
         }
 
